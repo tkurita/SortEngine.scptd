@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleExecutable</key>
+	<string>2.1</string>
+	<key>CFBundleGetInfoString</key>
+	<string>2.1 copyright 2003-2010, Tetsuro KURITA</string>
+	<key>CFBundleHelpBookFolder</key>
+	<string>SortEngineHelp</string>
+	<key>CFBundleHelpBookName</key>
+	<string>SortEngine Help</string>
+	<key>CFBundleIdentifier</key>
+	<string>Scriptfactory.SortEngine</string>
+	<key>CFBundleShortVersionString</key>
+	<string>2.1</string>
+	<key>CFBundleVersion</key>
+	<string>2.1</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>copyright 2003-2010, Tetsuro KURITA</string>
+	<key>WindowState</key>
+	<dict>
+		<key>name</key>
+		<string>ScriptWindowState</string>
+		<key>positionOfDivider</key>
+		<real>543</real>
+		<key>savedFrame</key>
+		<string>44 235 883 622 0 0 1440 878 </string>
+		<key>selectedTabView</key>
+		<string>description</string>
+	</dict>
+</dict>
+</plist>

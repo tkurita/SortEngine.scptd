@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<title>set_comparator</title>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<link href="../assets/default.css" type="text/css" rel="stylesheet" media="all" />
+		<link href="../assets/handler_page.css" type="text/css" rel="stylesheet" media="all" />
+		<link href="../assets/applescript.css" type="text/css" rel="stylesheet" media="all" />
+		<meta name="keywords" content="set_comparator" />
+		<script type="text/javascript" src="../assets/run_helpscript.js"></script>
+	</head>
+
+	<body>
+		<div style="visibility:hidden"><a href="../../" id="HelpBookRoot"></a></div>
+		<div id="smartheader">
+			<table width="95%" border="0" cellspacing="2" cellpadding="0">
+				<tr>
+					<td align="left"><a href="../contents.html">SortEngine Reference</a></td>
+					<td align="right"><a onclick="return runHelpScript(this)" href="../assets/editScript.scpt">Edit Script</a></td>
+				</tr>
+			</table>
+		</div>
+<div class="elementTitle">
+<a id="set_comparator" name="set_comparator">set_comparator</a>
+</div>
+<p class="sourceCode">
+<span class="userDefine">set_comparator</span>(<span class="userDefine">a_comparator</span>)
+<a href="../assets/setClipboard.scpt" onclick="return runHelpScriptWithInnerText(this)">
+<img src="../assets/Clipboard24.png" alt="copy to clipboard" align="right" />
+</a></p>
+<p>Set a custom comparator to the instance.</p>
+
+<p>A custom comparator script must have following specification.</p>
+<ul>
+<li>do handler which have two positional parameters.</li>
+<li>do handler return following values
+	<ul>
+	<li>1 : first argument &gt; second argument</li>
+	<li>0 : first argument = second argument</li>
+	<li>-1 : first argument &lt; second argument</li>
+	</ul>
+</li>
+</ul>
+
+<div class="subHeading">
+Parameters
+</div>
+<ul>
+<li>a_comparator (script object)</li>
+</ul>
+<div class="subHeading">
+Result
+</div>
+<p>script object : me</p>
+	</body>
+
+</html>

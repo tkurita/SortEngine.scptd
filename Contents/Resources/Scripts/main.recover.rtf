@@ -1,0 +1,1750 @@
+{\rtf1\ansi\ansicpg932\cocoartf949\cocoasubrtf540
+{\fonttbl\f0\fnil\fcharset128 Osaka;\f1\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red255\green0\blue0;\red0\green0\blue255;\red64\green128\blue0;
+\red76\green78\blue78;}
+\deftab480
+\pard\pardeftab480\ql\qnatural\pardirnatural
+
+\f0\fs24 \cf2 property
+\f1 \cf0  
+\f0 \cf3 name
+\f1 \cf0  
+\f0 :
+\f1  
+\f0 "SortEngine"
+\f1 \
+
+\f0 \cf2 property
+\f1 \cf0  
+\f0 \cf3 version
+\f1 \cf0  
+\f0 :
+\f1  
+\f0 "2.1"
+\f1 \
+
+\f0 \cf2 property
+\f1 \cf0  
+\f0 \cf4 XList
+\f1 \cf0  
+\f0 :
+\f1  
+\f0 \cf3 module
+\f1 \cf0 \
+
+\f0 --\cf5 property loader : boot (module loader) for me
+\f1 \cf0 \
+\
+
+\f0 --\cf5  compmarator scripts
+\f1 \cf0 \
+
+\f0 \cf2 script
+\f1 \cf0  
+\f0 \cf4 BaseComparator
+\f1 \cf0 \
+	
+\f0 \cf2 on
+\f1 \cf0  
+\f0 \cf4 do\cf0 (\cf4 a_first\cf0 ,
+\f1  
+\f0 \cf4 a_second\cf0 )
+\f1 \
+		
+\f0 \cf2 if
+\f1 \cf0  
+\f0 (\cf4 a_first
+\f1 \cf0  
+\f0 >
+\f1  
+\f0 \cf4 a_second\cf0 )
+\f1  
+\f0 \cf2 then
+\f1 \cf0 \
+			
+\f0 (*\cf5 \
+			log ("first " & a_first)\
+			log ("second " & a_second)\
+			log "large"\
+			\cf0 *)
+\f1 \
+			
+\f0 \cf2 return
+\f1 \cf0  
+\f0 1
+\f1 \
+		
+\f0 \cf2 else
+\f1 \cf0  
+\f0 \cf2 if
+\f1 \cf0  
+\f0 (\cf4 a_first
+\f1 \cf0  
+\f0 <
+\f1  
+\f0 \cf4 a_second\cf0 )
+\f1  
+\f0 \cf2 then
+\f1 \cf0 \
+			
+\f0 \cf2 return
+\f1 \cf0  
+\f0 -1
+\f1 \
+		
+\f0 \cf2 else
+\f1 \cf0 \
+			
+\f0 \cf2 return
+\f1 \cf0  
+\f0 0
+\f1 \
+		
+\f0 \cf2 end
+\f1 \cf0  
+\f0 \cf2 if
+\f1 \cf0 \
+	
+\f0 \cf2 end
+\f1 \cf0  
+\f0 \cf4 do
+\f1 \cf0 \
+
+\f0 \cf2 end
+\f1 \cf0  
+\f0 \cf2 script
+\f1 \cf0 \
+\
+
+\f0 (*\cf5 !@glossary\
+XList || help:openbook='XList Help'\
+\cf0 *)
+\f1 \
+\
+
+\f0 (*\cf5 !@title SortEngine Reference\
+* Version : 2.1\
+* Author : Tetsuro KURITA ((<tkurita@mac.com>))\
+\cf0 *)
+\f1 \
+\
+
+\f0 (*\cf5 !@group Constructor Methods \cf0 *)
+\f1 \
+\
+
+\f0 (*\cf5 !@abstruct\
+<!-- begin locale ja -->\
+\'83\'66\'83\'74\'83\'48\'83\'8b\'83\'67\'82\'cc\'90\'dd\'92\'e8\'82\'cc instance \'82\'f0\'90\'b6\'90\'ac\'82\'b5\'82\'dc\'82\'b7\'81\'42\
+<!-- begin locale en -->\
+Make a new instance of default settings.\
+<!-- end locale -->\
+@result script object :\
+<!-- begin locale ja -->SortEngine \'82\'cc \'90\'56\'82\'b5\'82\'a2 instance\
+<!-- begin locale en -->A new instance of SortEngine<!-- end locale -->\
+\cf0 *)
+\f1 \
+
+\f0 \cf2 on
+\f1 \cf0  
+\f0 \cf3 make
+\f1 \cf0 \
+	
+\f0 \cf2 script
+\f1 \cf0  
+\f0 \cf4 SortEngine
+\f1 \cf0 \
+		
+\f0 \cf2 property
+\f1 \cf0  
+\f0 \cf4 _comparator
+\f1 \cf0  
+\f0 :
+\f1  
+\f0 \cf2 my
+\f1 \cf0  
+\f0 \cf4 _comparator
+\f1 \cf0 \
+		
+\f0 \cf2 property
+\f1 \cf0  
+\f0 \cf4 _sort_direction
+\f1 \cf0  
+\f0 :
+\f1  
+\f0 \cf2 my
+\f1 \cf0  
+\f0 \cf4 _sort_direction
+\f1 \cf0 \
+		
+\f0 \cf2 property
+\f1 \cf0  
+\f0 \cf4 _sort_handler
+\f1 \cf0  
+\f0 :
+\f1  
+\f0 \cf2 my
+\f1 \cf0  
+\f0 \cf4 _sort_handler
+\f1 \cf0 \
+	
+\f0 \cf2 end
+\f1 \cf0  
+\f0 \cf2 script
+\f1 \cf0 \
+	\
+	
+\f0 \cf2 return
+\f1 \cf0  
+\f0 \cf4 SortEngine
+\f1 \cf0 \
+
+\f0 \cf2 end
+\f1 \cf0  
+\f0 \cf3 make
+\f1 \cf0 \
+\
+
+\f0 (*\cf5 !@abstruct\
+<!-- begin locale ja -->\
+record \'82\'f0\'88\'f8\'90\'94\'82\'c9\'97\'5e\'82\'a6\'82\'e9\'82\'b1\'82\'c6\'82\'c9\'82\'e6\'82\'e8\'81\'41\'83\'49\'83\'76\'83\'56\'83\'87\'83\'93\'82\'f0\'90\'dd\'92\'e8\'82\'b5\'82\'c4\'81\'41\'90\'56\'82\'b5\'82\'a2 instance \'82\'f0\'90\'b6\'90\'ac\'82\'b5\'82\'dc\'82\'b7\'81\'42\
+<!-- begin locale en -->\
+Make a new instance with passing a record which describes options.\
+<!-- end locale -->\
+@description\
+<!-- begin locale ja -->\
+\'88\'f8\'90\'94\'82\'c9\'97\'5e\'82\'a6\'82\'e9\'83\'8c\'83\'52\'81\'5b\'83\'68\'82\'cc\'83\'89\'83\'78\'83\'8b\'82\'cd\'88\'c8\'89\'ba\'82\'cc\'8e\'ed\'97\'de\'82\'aa\'82\'a0\'82\'e8\'82\'dc\'82\'b7\'81\'42\
+* ascending (boolean) : \'83\'5c\'81\'5b\'83\'67\'8f\'87\'8f\'98\'81\'42\'8f\'b8\'8f\'87: true, \'8d\'7e\'8f\'87 :false\'81\'42\'8f\'c8\'97\'aa\'82\'b7\'82\'e9\'82\'c6\'8f\'b8\'8f\'87\'82\'c9\'82\'c8\'82\'e8\'82\'dc\'82\'b7\'81\'42\
+* sorter (string) : \'8e\'67\'97\'70\'82\'b7\'82\'e9\'83\'5c\'81\'5b\'83\'67\'82\'cc\'83\'41\'83\'8b\'83\'53\'83\'8a\'83\'59\'83\'80\'82\'f0\'8e\'77\'92\'e8\'82\'b5\'82\'dc\'82\'b7\'81\'42\'83\'4e\'83\'43\'83\'62\'83\'4e\'83\'5c\'81\'5b\'83\'67 \'82\'f0\'8e\'67\'97\'70\'82\'b7\'82\'e9\'82\'c6\'82\'ab\'82\'cd "quick"\'81\'41\'83\'6f\'83\'75\'83\'8b\'83\'5c\'81\'5b\'83\'67\'82\'f0\'8e\'67\'97\'70\'82\'b7\'82\'e9 "bubble" \'82\'f0\'97\'5e\'82\'a6\'82\'dc\'82\'b7\'81\'42\'8f\'c8\'97\'aa\'82\'b7\'82\'e9\'82\'c6\'81\'41\'83\'4e\'83\'43\'83\'62\'83\'4e\'83\'5c\'81\'5b\'83\'67\'81\'42\
+* comparator (script object): AppleScript \'82\'cc\'94\'e4\'8a\'72\'89\'89\'8e\'5a\'8e\'71\'82\'c5\'88\'b5\'82\'a6\'82\'c8\'82\'a2\'92\'6c\'82\'f0\'83\'5c\'81\'5b\'83\'67\'82\'b7\'82\'e9\'8e\'9e\'82\'c9\'81\'41\'91\'e5\'8f\'ac\'8a\'d6\'8c\'57\'82\'f0\'92\'e8\'8b\'60\'82\'b7\'82\'e9 script object\'81\'42\
+<!-- begin locale en -->\
+The record to pass as an arugment can have following labels.\
+* ascending (boolean) : Set sorting order. For descending order, false must be given. If omitted, sort in ascending order.\
+* sorter (string) : Sorting algorithm. "quick" indicates the quick sort. "bubble" indicates the bubble sort. The quick sort is used in the default.\
+* comparator (script object): A script object to define magnitude relation of values which can not deal with compararison operators of AppleScript.\
+<!-- end locale -->\
+@param a_record (record):\
+<!-- begin locale ja -->\'83\'43\'83\'93\'83\'58\'83\'5e\'83\'93\'83\'58\'82\'cc\'83\'49\'83\'76\'83\'56\'83\'87\'83\'93\
+<!-- begin locale en -->Options for a new instance\
+<!-- end locale -->\
+@result script object :\
+<!-- begin locale ja -->SortEngine \'82\'cc \'90\'56\'82\'b5\'82\'a2 instance\
+<!-- begin locale en -->A new instance of SortEngine<!-- end locale -->\
+\cf0 *)
+\f1 \
+
+\f0 \cf2 on
+\f1 \cf0  
+\f0 \cf4 make_with\cf0 (\cf4 a_record\cf0 )
+\f1 \
+	
+\f0 \cf2 set
+\f1 \cf0  
+\f0 \cf4 a_sorter
+\f1 \cf0  
+\f0 \cf2 to
+\f1 \cf0  
+\f0 \cf3 make
+\f1 \cf0 \
+	
+\f0 \cf2 try
+\f1 \cf0 \
+		
+\f0 \cf2 set
+\f1 \cf0  
+\f0 \cf4 a_name
+\f1 \cf0  
+\f0 \cf2 to
+\f1 \cf0  
+\f0 \cf4 a_record\cf0 's
+\f1  
+\f0 \cf4 sorter
+\f1 \cf0 \
+		
+\f0 \cf2 if
+\f1 \cf0  
+\f0 \cf4 a_name
+\f1 \cf0  
+\f0 \cf2 starts with
+\f1 \cf0  
+\f0 "quick"
+\f1  
+\f0 \cf2 then
+\f1 \cf0 \
+			
+\f0 \cf4 a_sorter\cf0 's
+\f1  
+\f0 \cf4 use_quicksort\cf0 ()
+\f1 \
+		
+\f0 \cf2 else
+\f1 \cf0  
+\f0 \cf2 if
+\f1 \cf0  
+\f0 \cf4 a_name
+\f1 \cf0  
+\f0 \cf2 starts with
+\f1 \cf0  
+\f0 "bubble"
+\f1  
+\f0 \cf2 then
+\f1 \cf0 \
+			
+\f0 \cf4 a_sorter\cf0 's
+\f1  
+\f0 \cf4 use_bubblesort\cf0 ()
+\f1 \
+		
+\f0 \cf2 else
+\f1 \cf0 \
+			
+\f0 \cf2 error
+\f1 \cf0  
+\f0 (\cf4 a_name
+\f1 \cf0  
+\f0 &
+\f1  
+\f0 " is unknown sorter specification.")
+\f1  
+\f0 \cf3 number
+\f1 \cf0  
+\f0 930
+\f1 \
+		
+\f0 \cf2 end
+\f1 \cf0  
+\f0 \cf2 if
+\f1 \cf0 \
+	
+\f0 \cf2 end
+\f1 \cf0  
+\f0 \cf2 try
+\f1 \cf0 \
+	\
+	
+\f0 \cf2 try
+\f1 \cf0 \
+		
+\f0 \cf4 a_sorter\cf0 's
+\f1  
+\f0 \cf4 set_comparator\cf0 (\cf4 a_record\cf0 's
+\f1  
+\f0 \cf4 comparator\cf0 )
+\f1 \
+	
+\f0 \cf2 end
+\f1 \cf0  
+\f0 \cf2 try
+\f1 \cf0 \
+	\
+	
+\f0 \cf2 try
+\f1 \cf0 \
+		
+\f0 \cf4 a_sorter\cf0 's
+\f1  
+\f0 \cf4 set_ascending\cf0 (\cf4 a_record\cf0 's
+\f1  
+\f0 \cf4 ascending\cf0 )
+\f1 \
+	
+\f0 \cf2 end
+\f1 \cf0  
+\f0 \cf2 try
+\f1 \cf0 \
+	
+\f0 \cf2 return
+\f1 \cf0  
+\f0 \cf4 a_sorter
+\f1 \cf0 \
+
+\f0 \cf2 end
+\f1 \cf0  
+\f0 \cf4 make_with
+\f1 \cf0 \
+\
+
+\f0 (*\cf5 !@group Class method \cf0 *)
+\f1 \
+\
+
+\f0 (*\cf5 !@abstruct\
+<!-- begin locale ja -->\
+SortEngine \'82\'c9\'93\'e0\'91\'a0\'82\'b3\'82\'ea\'82\'c4\'82\'a2\'82\'e9 comparator script \'82\'f0\'8e\'e6\'93\'be\'82\'b5\'82\'dc\'82\'b7\'81\'42\
+<!-- begin locale en -->\
+Obtain default comparator script in embeded in SortEngine.\
+<!-- end locale -->\
+@description\
+<!-- begin locale ja -->\
+AppleScript \'82\'cc\'94\'e4\'8a\'72\'89\'89\'8e\'5a\'8e\'71\'82\'c5\'88\'b5\'82\'a6\'82\'e9\'92\'6c\'82\'f0\'83\'5c\'81\'5b\'83\'67\'82\'b7\'82\'e9\'8e\'9e\'82\'c9\'8e\'67\'82\'a2\'82\'dc\'82\'b7\'81\'42\'83\'66\'83\'74\'83\'48\'83\'8b\'83\'67\'82\'cc comparator script \'82\'c5\'82\'b7\'81\'42\
+\
+\'83\'4a\'83\'58\'83\'5e\'83\'80\'82\'c8 comparator script \'82\'f0\'8d\'ec\'82\'e9\'82\'c6\'8e\'9e\'82\'c9\'81\'41\'8c\'70\'8f\'b3\'82\'b7\'82\'e9\'82\'c6\'93\'73\'8d\'87\'82\'aa\'82\'a2\'82\'a2\'82\'c5\'82\'b5\'82\'e5\'82\'a4\'81\'42\
+<!-- begin locale en -->\
+This script object is default comparator script. This is used to sort valus which can be deal with AppleScript's comparison operators.\
+\
+The inheriting this script object is useful to make a custom comparator script.\
+<!-- end locale -->\
+@result script object\
+\cf0 *)
+\f1 \
+
+\f0 \cf2 on
+\f1 \cf0  
+\f0 \cf4 base_comparator\cf0 ()
+\f1 \
+	
+\f0 \cf2 return
+\f1 \cf0  
+\f0 \cf4 BaseComparator
+\f1 \cf0 \
+
+\f0 \cf2 end
+\f1 \cf0  
+\f0 \cf4 base_comparator
+\f1 \cf0 \
+\
+
+\f0 (*\cf5 !@group Do Sort \cf0 *)
+\f1 \
+\
+
+\f0 (*\cf5 !@abstruct\
+<!-- begin locale ja -->\
+\'83\'8a\'83\'58\'83\'67\'82\'f0\'83\'5c\'81\'5b\'83\'67\'82\'b5\'82\'dc\'82\'b7\'81\'42\
+<!-- begin locale en -->\
+Sort a list.\
+<!-- end locale -->\
+@param a_list (list) :\
+<!-- begin locale ja -->\'83\'5c\'81\'5b\'83\'67\'82\'b7\'82\'e9\'83\'8a\'83\'58\'83\'67\
+<!-- begin locale en -->a list to sort\
+<!-- end locale -->\
+@result list : \
+<!-- begin locale ja -->\'83\'5c\'81\'5b\'83\'67\'82\'b3\'82\'ea\'82\'bd\'83\'8a\'83\'58\'83\'67\'81\'42\'95\'d4\'82\'e8\'92\'6c\'82\'c6\'88\'f8\'90\'94\'82\'cd\'93\'af\'82\'b6\'83\'8a\'83\'58\'83\'67\'82\'c5\'82\'b7\'81\'42\
+<!-- begin locale en -->A sorted list. The return list is identical to the list passed as an argument.<!-- end locale -->\
+\cf0 *)
+\f1 \
+
+\f0 \cf2 on
+\f1 \cf0  
+\f0 \cf4 sort_list\cf0 (\cf4 a_list\cf0 )
+\f1 \
+	
+\f0 \cf2 set
+\f1 \cf0  
+\f0 \cf4 a_xlist
+\f1 \cf0  
+\f0 \cf2 to
+\f1 \cf0  
+\f0 \cf4 XList\cf0 's
+\f1  
+\f0 \cf4 make_with\cf0 (\cf4 a_list\cf0 )
+\f1 \
+	
+\f0 \cf2 return
+\f1 \cf0  
+\f0 \cf4 sort_xlist\cf0 (\cf4 a_xlist\cf0 )'s
+\f1  
+\f0 \cf4 list_ref\cf0 ()
+\f1 \
+
+\f0 \cf2 end
+\f1 \cf0  
+\f0 \cf4 sort_list
+\f1 \cf0 \
+\
+
+\f0 (*\cf5 !@abstruct\
+<!-- begin locale ja -->\
+((<XList>)) \'82\'f0\'83\'5c\'81\'5b\'83\'67\'82\'b5\'82\'dc\'82\'b7\'81\'42\
+<!-- begin locale en -->\
+Sort a XList.\
+<!-- end locale -->\
+@param a_xlist (XList) :\
+<!-- begin locale ja -->\'83\'5c\'81\'5b\'83\'67\'82\'b7\'82\'e9 ((<XList>)) \'82\'cc\'83\'43\'83\'93\'83\'58\'83\'5e\'83\'93\'83\'58\
+<!-- begin locale en -->an instance of ((<XList>)) to sort\
+<!-- end locale -->\
+@result list : XList\
+<!-- begin locale ja -->\'83\'5c\'81\'5b\'83\'67\'82\'b3\'82\'ea\'82\'bd ((<XList>))\'81\'42\'95\'d4\'82\'e8\'92\'6c\'82\'c6\'88\'f8\'90\'94\'82\'cd\'93\'af\'82\'b6 XList \'82\'cc\'83\'43\'83\'93\'83\'58\'83\'5e\'83\'93\'83\'58\'82\'c5\'82\'b7\'81\'42\
+<!-- begin locale en -->A sorted ((<XList>)) instance. The return XList is identical to the XList passed as an argument.<!-- end locale -->\
+\cf0 *)
+\f1 \
+
+\f0 \cf2 on
+\f1 \cf0  
+\f0 \cf4 sort_xlist\cf0 (\cf4 a_xlist\cf0 )
+\f1 \
+	
+\f0 \cf2 set
+\f1 \cf0  
+\f0 \cf4 a_xlist
+\f1 \cf0  
+\f0 \cf2 to
+\f1 \cf0  
+\f0 \cf4 XList\cf0 's
+\f1  
+\f0 \cf4 make_with\cf0 (\{\cf4 a_xlist\cf0 \})
+\f1 \
+	
+\f0 \cf2 return
+\f1 \cf0  
+\f0 \cf2 my
+\f1 \cf0  
+\f0 \cf4 _sort_handler\cf0 (\cf4 a_xlist\cf0 ,
+\f1  
+\f0 1)'s
+\f1  
+\f0 \cf4 item_at\cf0 (1)
+\f1 \
+
+\f0 \cf2 end
+\f1 \cf0  
+\f0 \cf4 sort_xlist
+\f1 \cf0 \
+\
+
+\f0 (*\cf5 !@abstruct\
+<!-- begin locale ja -->\
+\'8e\'77\'92\'e8\'82\'b5\'82\'bd\'83\'43\'83\'93\'83\'66\'83\'62\'83\'4e\'83\'58\'82\'cc\'83\'8a\'83\'58\'83\'67\'82\'f0\'8a\'ee\'8f\'80\'82\'c9\'82\'b5\'82\'c4\'81\'41\'82\'51\'8e\'9f\'8c\'b3\'83\'8a\'83\'58\'83\'67\'82\'cc\'82\'bb\'82\'ea\'82\'bc\'82\'ea\'82\'cc\'83\'8a\'83\'58\'83\'67\'82\'f0\'83\'5c\'81\'5b\'83\'67\'82\'b5\'82\'dc\'82\'b7\'81\'42\
+<!-- begin locale en -->\
+Sort each list in two dimensional list according to the order of the list of the specified index.\
+<!-- end locale -->\
+@param\'81\'40a_list2d (list of lists) :\
+<!-- begin locale ja -->\'83\'5c\'81\'5b\'83\'67\'82\'b7\'82\'e9\'83\'8a\'83\'58\'83\'67\'82\'cc\'83\'8a\'83\'58\'83\'67\
+<!-- begin locale en --> a list of to sort each list in it.\
+<!-- end locale -->\
+@param key_index (integer) :\
+<!-- begin locale ja -->\'83\'5c\'81\'5b\'83\'67\'8f\'87\'8f\'98\'82\'f0\'8c\'88\'92\'e8\'82\'b7\'82\'e9\'83\'8a\'83\'58\'83\'67\'82\'cc\'83\'43\'83\'93\'83\'66\'83\'62\'83\'4e\'83\'58\
+<!-- begin locale en -->An index of a list which determine the sorting order.\
+<!-- end locale -->\
+@result list of lists :\
+<!-- begin locale ja -->\'83\'5c\'81\'5b\'83\'67\'82\'b3\'82\'ea\'82\'bd2\'8e\'9f\'8c\'b3\'83\'8a\'83\'58\'83\'67\'81\'42\'95\'d4\'82\'e8\'92\'6c\'82\'c6\'88\'f8\'90\'94\'82\'cd\'93\'af\'82\'b6\'83\'8a\'83\'58\'83\'67\'82\'c5\'82\'b7\'81\'42\
+<!-- begin locale en -->A sorted two deimensional list. The returned list is identical to the list passed as an argument.<!-- end locale -->\
+\cf0 *)
+\f1 \
+
+\f0 \cf2 on
+\f1 \cf0  
+\f0 \cf4 sort_table\cf0 (\cf4 a_list2d\cf0 ,
+\f1  
+\f0 \cf4 key_index\cf0 )
+\f1 \
+	
+\f0 \cf2 set
+\f1 \cf0  
+\f0 \cf4 a_xlist2d
+\f1 \cf0  
+\f0 \cf2 to
+\f1 \cf0  
+\f0 \cf4 XList\cf0 's
+\f1  
+\f0 \cf4 make_with\cf0 (\cf4 a_list2d\cf0 )
+\f1 \
+	
+\f0 \cf2 script
+\f1 \cf0  
+\f0 \cf4 XListConverter
+\f1 \cf0 \
+		
+\f0 \cf2 on
+\f1 \cf0  
+\f0 \cf4 do\cf0 (\cf4 a_ref\cf0 )
+\f1 \
+			
+\f0 \cf2 return
+\f1 \cf0  
+\f0 \cf4 XList\cf0 's
+\f1  
+\f0 \cf4 make_with\cf0 (\cf3 contents
+\f1 \cf0  
+\f0 \cf2 of
+\f1 \cf0  
+\f0 \cf4 a_ref\cf0 )
+\f1 \
+		
+\f0 \cf2 end
+\f1 \cf0  
+\f0 \cf4 do
+\f1 \cf0 \
+	
+\f0 \cf2 end
+\f1 \cf0  
+\f0 \cf2 script
+\f1 \cf0 \
+	
+\f0 \cf2 set
+\f1 \cf0  
+\f0 \cf4 a_xlist2d
+\f1 \cf0  
+\f0 \cf2 to
+\f1 \cf0  
+\f0 \cf4 a_xlist2d\cf0 's
+\f1  
+\f0 \cf4 map\cf0 (\cf4 XListConverter\cf0 )
+\f1 \
+	
+\f0 \cf2 my
+\f1 \cf0  
+\f0 \cf4 _sort_handler\cf0 (\cf4 a_xlist2d\cf0 ,
+\f1  
+\f0 \cf4 key_index\cf0 )
+\f1 \
+	
+\f0 \cf2 return
+\f1 \cf0  
+\f0 \cf4 a_list2d
+\f1 \cf0 \
+
+\f0 \cf2 end
+\f1 \cf0  
+\f0 \cf4 sort_table
+\f1 \cf0 \
+\
+
+\f0 (*\cf5 !@abstruct\
+<!-- begin locale ja -->\
+2\'8e\'9f\'8c\'b3\'82\'cc ((<XList>)) \'82\'f0\'83\'5c\'81\'5b\'83\'67\'82\'b5\'82\'dc\'82\'b7\'81\'42\'8e\'77\'92\'e8\'82\'b5\'82\'bd\'83\'43\'83\'93\'83\'66\'83\'62\'83\'4e\'83\'58\'82\'cc XList \'82\'f0\'8a\'ee\'8f\'80\'82\'c9\'82\'b5\'82\'c4\'81\'41\'82\'bb\'82\'ea\'82\'bc\'82\'ea\'82\'cc XList \'82\'f0\'83\'5c\'81\'5b\'83\'67\'82\'b5\'82\'dc\'82\'b7\'81\'42\
+<!-- begin locale en -->\
+Sort each ((<XList>)) in two dimensional XList according to the order of the sub XList of the specified index.\
+<!-- end locale -->\
+@description\
+<!-- begin locale ja -->\
+2\'8e\'9f\'8c\'b3\'82\'cc XList \'82\'c6\'82\'cd\'81\'41\'82\'b7\'82\'d7\'82\'c4\'82\'cc\'97\'76\'91\'66\'82\'aa XList \'82\'c5\'82\'a0\'82\'e9 XList \'82\'c5\'82\'b7\'81\'42\
+<!-- begin locale en -->\
+A two dimensional XList means an XList instance of which all elements are XList instances.\
+<!-- end locale -->\
+@param\'81\'40a_list2d (list of lists) :\
+<!-- begin locale ja -->\'83\'5c\'81\'5b\'83\'67\'82\'b7\'82\'e9 ((<XList>)) \'82\'f0\'97\'76\'91\'66\'82\'c6\'82\'b5\'82\'bd ((<XList>))\
+<!-- begin locale en --> a XList instance of to sort each XList instance in it.\
+<!-- end locale -->\
+@param key_index (integer) :\
+<!-- begin locale ja -->\'83\'5c\'81\'5b\'83\'67\'8f\'87\'8f\'98\'82\'f0\'8c\'88\'92\'e8\'82\'b7\'82\'e9 XLIst \'82\'cc\'83\'43\'83\'93\'83\'66\'83\'62\'83\'4e\'83\'58\
+<!-- begin locale en -->An index of a XList instance which determine the sorting order.\
+<!-- end locale -->\
+@result list of lists :\
+<!-- begin locale ja -->\'83\'5c\'81\'5b\'83\'67\'82\'b3\'82\'ea\'82\'bd2\'8e\'9f\'8c\'b3 XList\'81\'42\'95\'d4\'82\'e8\'92\'6c\'82\'c6\'88\'f8\'90\'94\'82\'cd\'93\'af\'82\'b6 XList \'82\'cc\'83\'43\'83\'93\'83\'58\'83\'5e\'83\'93\'83\'58\'82\'c5\'82\'b7\'81\'42\
+<!-- begin locale en -->A sorted two deimensional XList instance. The returned XList instance is identical to the XList instance passed as an argument.<!-- end locale -->\
+\cf0 *)
+\f1 \
+
+\f0 \cf2 on
+\f1 \cf0  
+\f0 \cf4 sort_xtable\cf0 (\cf4 a_xlist2d\cf0 ,
+\f1  
+\f0 \cf4 key_index\cf0 )
+\f1 \
+	
+\f0 \cf2 return
+\f1 \cf0  
+\f0 \cf2 my
+\f1 \cf0  
+\f0 \cf4 _sort_handler\cf0 (\cf4 a_xlist2d\cf0 ,
+\f1  
+\f0 \cf4 key_index\cf0 )
+\f1 \
+
+\f0 \cf2 end
+\f1 \cf0  
+\f0 \cf4 sort_xtable
+\f1 \cf0 \
+\
+
+\f0 (*\cf5 !@group Accessor Methods \cf0 *)
+\f1 \
+\
+
+\f0 (*\cf5 !@abstruct\
+<!-- begin locale ja -->\
+\'90\'dd\'92\'e8\'82\'b3\'82\'ea\'82\'c4\'82\'a2\'82\'e9\'83\'5c\'81\'5b\'83\'67\'8f\'87\'8f\'98\'82\'aa\'8f\'b8\'8f\'87\'82\'c8\'82\'e7 true \'82\'f0\'95\'d4\'82\'b5\'82\'dc\'82\'b7\'81\'42\
+<!-- begin locale en -->\
+Return true when sorting order of the instance is ascending.\
+<!-- end locale -->\
+@result boolean : \
+<!-- begin locale ja --> true\'81\'40: \'8f\'b8\'8f\'87, false : \'8d\'7e\'8f\'87\
+<!-- begin locale en -->true : ascending, false : descending <!-- end locale -->\
+\cf0 *)
+\f1 \
+
+\f0 \cf2 on
+\f1 \cf0  
+\f0 \cf4 is_ascending\cf0 ()
+\f1 \
+	
+\f0 \cf2 return
+\f1 \cf0  
+\f0 \cf2 my
+\f1 \cf0  
+\f0 \cf4 _sort_direction
+\f1 \cf0  
+\f0 \cf2 is
+\f1 \cf0  
+\f0 1
+\f1 \
+
+\f0 \cf2 end
+\f1 \cf0  
+\f0 \cf4 is_ascending
+\f1 \cf0 \
+\
+
+\f0 (*\cf5 !@abstruct\
+<!-- begin locale ja -->\
+\'83\'5c\'81\'5b\'83\'67\'8f\'87\'8f\'98\'82\'f0\'90\'dd\'92\'e8\'82\'b5\'82\'dc\'82\'b7\'81\'42\
+<!-- begin locale en -->\
+Set sorting order.\
+<!-- begin locale en -->\
+@param a_flag (boolean) :\
+<!-- begin locale ja -->true : \'8f\'b8\'8f\'87, false : \'8d\'7e\'8f\'87\
+<!-- begin locale en -->true : ascending, false : descending\
+@result script object : me\
+\cf0 *)
+\f1 \
+
+\f0 \cf2 on
+\f1 \cf0  
+\f0 \cf4 set_ascending\cf0 (\cf4 a_flag\cf0 )
+\f1 \
+	
+\f0 \cf2 if
+\f1 \cf0  
+\f0 \cf4 a_flag
+\f1 \cf0  
+\f0 \cf2 then
+\f1 \cf0 \
+		
+\f0 \cf2 set
+\f1 \cf0  
+\f0 \cf2 my
+\f1 \cf0  
+\f0 \cf4 _sort_direction
+\f1 \cf0  
+\f0 \cf2 to
+\f1 \cf0  
+\f0 1
+\f1 \
+	
+\f0 \cf2 else
+\f1 \cf0 \
+		
+\f0 \cf2 set
+\f1 \cf0  
+\f0 \cf2 my
+\f1 \cf0  
+\f0 \cf4 _sort_direction
+\f1 \cf0  
+\f0 \cf2 to
+\f1 \cf0  
+\f0 -1
+\f1 \
+	
+\f0 \cf2 end
+\f1 \cf0  
+\f0 \cf2 if
+\f1 \cf0 \
+	
+\f0 \cf2 return
+\f1 \cf0  
+\f0 \cf2 me
+\f1 \cf0 \
+
+\f0 \cf2 end
+\f1 \cf0  
+\f0 \cf4 set_ascending
+\f1 \cf0 \
+\
+
+\f0 \cf2 on
+\f1 \cf0  
+\f0 \cf4 bubblesort_list2d\cf0 (\cf4 a_xlist2d\cf0 ,
+\f1  
+\f0 \cf4 key_index\cf0 )
+\f1  
+\f0 --\cf5  must be placed before use_bubblesort
+\f1 \cf0 \
+	
+\f0 --\cf5 set keylist to XList's make_with(item key_index of a_list2d)
+\f1 \cf0 \
+	
+\f0 \cf2 set
+\f1 \cf0  
+\f0 \cf4 keylist
+\f1 \cf0  
+\f0 \cf2 to
+\f1 \cf0  
+\f0 \cf4 a_xlist2d\cf0 's
+\f1  
+\f0 \cf4 item_at\cf0 (\cf4 key_index\cf0 )
+\f1 \
+	
+\f0 \cf2 set
+\f1 \cf0  
+\f0 \cf4 list_len
+\f1 \cf0  
+\f0 \cf2 to
+\f1 \cf0  
+\f0 \cf4 keylist\cf0 's
+\f1  
+\f0 \cf4 count_items\cf0 ()
+\f1 \
+	\
+	
+\f0 \cf2 if
+\f1 \cf0  
+\f0 \cf4 list_len
+\f1 \cf0  
+\f0 \cf2 is
+\f1 \cf0  
+\f0 \cf2 less than
+\f1 \cf0  
+\f0 \cf2 or
+\f1 \cf0  
+\f0 \cf2 equal to
+\f1 \cf0  
+\f0 1
+\f1  
+\f0 \cf2 then
+\f1 \cf0 \
+		
+\f0 \cf2 return
+\f1 \cf0  
+\f0 \cf4 a_xlist2d
+\f1 \cf0 \
+	
+\f0 \cf2 end
+\f1 \cf0  
+\f0 \cf2 if
+\f1 \cf0 \
+	\
+	
+\f0 --\cf5 do sort
+\f1 \cf0 \
+	
+\f0 \cf2 repeat
+\f1 \cf0 \
+		
+\f0 \cf2 set
+\f1 \cf0  
+\f0 \cf4 sorted_count
+\f1 \cf0  
+\f0 \cf2 to
+\f1 \cf0  
+\f0 0
+\f1 \
+		
+\f0 \cf2 repeat
+\f1 \cf0  
+\f0 \cf2 with
+\f1 \cf0  
+\f0 \cf4 i
+\f1 \cf0  
+\f0 \cf2 from
+\f1 \cf0  
+\f0 1
+\f1  
+\f0 \cf2 to
+\f1 \cf0  
+\f0 (\cf4 list_len
+\f1 \cf0  
+\f0 -
+\f1  
+\f0 1)
+\f1 \
+			
+\f0 \cf2 set
+\f1 \cf0  
+\f0 \cf4 a_first
+\f1 \cf0  
+\f0 \cf2 to
+\f1 \cf0  
+\f0 \cf4 keylist\cf0 's
+\f1  
+\f0 \cf4 item_at\cf0 (\cf4 i\cf0 )
+\f1 \
+			
+\f0 \cf2 set
+\f1 \cf0  
+\f0 \cf4 a_secont
+\f1 \cf0  
+\f0 \cf2 to
+\f1 \cf0  
+\f0 \cf4 keylist\cf0 's
+\f1  
+\f0 \cf4 item_at\cf0 (\cf4 i
+\f1 \cf0  
+\f0 +
+\f1  
+\f0 1)
+\f1 \
+			
+\f0 (*\cf5 \
+			copy item i of keylist to a_first\
+			copy item (i + 1) of keylist to a_second\
+			\cf0 *)
+\f1 \
+			
+\f0 \cf2 set
+\f1 \cf0  
+\f0 \cf4 a_result
+\f1 \cf0  
+\f0 \cf2 to
+\f1 \cf0  
+\f0 \cf4 do\cf0 (\cf4 a_first\cf0 ,
+\f1  
+\f0 \cf4 a_secont\cf0 )
+\f1  
+\f0 \cf2 of
+\f1 \cf0  
+\f0 \cf2 my
+\f1 \cf0  
+\f0 \cf4 _comparator
+\f1 \cf0 \
+			
+\f0 --\cf5  1,firstItem > secondItem
+\f1 \cf0 \
+			
+\f0 --\cf5  0, firstItem = secondItem
+\f1 \cf0 \
+			
+\f0 --\cf5  -1 firstItem < secondItem
+\f1 \cf0 \
+			\
+			
+\f0 \cf2 if
+\f1 \cf0  
+\f0 \cf4 a_result
+\f1 \cf0  
+\f0 \cf2 is
+\f1 \cf0  
+\f0 \cf2 my
+\f1 \cf0  
+\f0 \cf4 _sort_direction
+\f1 \cf0  
+\f0 \cf2 then
+\f1 \cf0 \
+				
+\f0 \cf4 exchange_item\cf0 (\cf4 i\cf0 ,
+\f1  
+\f0 \cf4 i
+\f1 \cf0  
+\f0 +
+\f1  
+\f0 1,
+\f1  
+\f0 \cf4 a_xlist2d\cf0 )
+\f1 \
+			
+\f0 \cf2 else
+\f1 \cf0 \
+				
+\f0 \cf2 set
+\f1 \cf0  
+\f0 \cf4 sorted_count
+\f1 \cf0  
+\f0 \cf2 to
+\f1 \cf0  
+\f0 \cf4 sorted_count
+\f1 \cf0  
+\f0 +
+\f1  
+\f0 1
+\f1 \
+			
+\f0 \cf2 end
+\f1 \cf0  
+\f0 \cf2 if
+\f1 \cf0 \
+		
+\f0 \cf2 end
+\f1 \cf0  
+\f0 \cf2 repeat
+\f1 \cf0 \
+		
+\f0 \cf2 if
+\f1 \cf0  
+\f0 \cf4 sorted_count
+\f1 \cf0  
+\f0 \cf2 is
+\f1 \cf0  
+\f0 (\cf4 list_len
+\f1 \cf0  
+\f0 -
+\f1  
+\f0 1)
+\f1  
+\f0 \cf2 then
+\f1 \cf0  
+\f0 \cf2 exit
+\f1 \cf0  
+\f0 \cf2 repeat
+\f1 \cf0 \
+	
+\f0 \cf2 end
+\f1 \cf0  
+\f0 \cf2 repeat
+\f1 \cf0 \
+	
+\f0 \cf2 return
+\f1 \cf0  
+\f0 \cf4 a_xlist2d
+\f1 \cf0 \
+
+\f0 \cf2 end
+\f1 \cf0  
+\f0 \cf4 bubblesort_list2d
+\f1 \cf0 \
+\
+
+\f0 (*\cf5 !@abstruct\
+<!-- begin locale ja -->\
+\'83\'5c\'81\'5b\'83\'67\'83\'41\'83\'8b\'83\'53\'83\'8a\'83\'59\'83\'80\'82\'f0\'83\'4e\'83\'43\'83\'62\'83\'4e\'83\'5c\'81\'5b\'83\'67\'82\'c9\'90\'dd\'92\'e8\'82\'b5\'82\'dc\'82\'b7\'81\'42\'83\'66\'83\'74\'83\'48\'83\'8b\'83\'67\'82\'c5\'82\'b7\'81\'42\
+<!-- begin locale en -->\
+Set sorting algorithm to quick sort. This is the default.\
+<!-- end locale -->\
+@result script object : me\
+\cf0 *)
+\f1 \
+
+\f0 \cf2 on
+\f1 \cf0  
+\f0 \cf4 use_bubblesort\cf0 ()
+\f1 \
+	
+\f0 \cf2 set
+\f1 \cf0  
+\f0 \cf2 my
+\f1 \cf0  
+\f0 \cf4 _sort_handler
+\f1 \cf0  
+\f0 \cf2 to
+\f1 \cf0  
+\f0 \cf4 bubblesort_list2d
+\f1 \cf0 \
+	
+\f0 \cf2 return
+\f1 \cf0  
+\f0 \cf2 me
+\f1 \cf0 \
+
+\f0 \cf2 end
+\f1 \cf0  
+\f0 \cf4 use_bubblesort
+\f1 \cf0 \
+\
+
+\f0 \cf2 on
+\f1 \cf0  
+\f0 \cf4 quicksort_list2d\cf0 (\cf4 a_xlist2d\cf0 ,
+\f1  
+\f0 \cf4 key_index\cf0 )
+\f1  
+\f0 --\cf5  must be placed before use_quicksort
+\f1 \cf0 \
+	
+\f0 \cf2 set
+\f1 \cf0  
+\f0 \cf4 keylist
+\f1 \cf0  
+\f0 \cf2 to
+\f1 \cf0  
+\f0 \cf4 a_xlist2d\cf0 's
+\f1  
+\f0 \cf4 item_at\cf0 (\cf4 key_index\cf0 )
+\f1 \
+	
+\f0 \cf2 return
+\f1 \cf0  
+\f0 \cf4 quicksort\cf0 (1,
+\f1  
+\f0 \cf4 keylist\cf0 's
+\f1  
+\f0 \cf4 count_items\cf0 (),
+\f1  
+\f0 \cf4 a_xlist2d\cf0 ,
+\f1  
+\f0 \cf4 keylist\cf0 )
+\f1 \
+
+\f0 \cf2 end
+\f1 \cf0  
+\f0 \cf4 quicksort_list2d
+\f1 \cf0 \
+\
+
+\f0 (*\cf5 !@abstruct\
+<!-- begin locale ja -->\
+\'83\'5c\'81\'5b\'83\'67\'83\'41\'83\'8b\'83\'53\'83\'8a\'83\'59\'83\'80\'82\'f0\'83\'6f\'83\'75\'83\'8b\'83\'5c\'81\'5b\'83\'67\'82\'c9\'90\'dd\'92\'e8\'82\'b5\'82\'dc\'82\'b7\'81\'42\
+<!-- begin locale en -->\
+Set sorting algorithm to bubble sort.\
+<!-- end locale -->\
+@result script object : me\
+\cf0 *)
+\f1 \
+
+\f0 \cf2 on
+\f1 \cf0  
+\f0 \cf4 use_quicksort\cf0 ()
+\f1 \
+	
+\f0 \cf2 set
+\f1 \cf0  
+\f0 \cf2 my
+\f1 \cf0  
+\f0 \cf4 _sort_handler
+\f1 \cf0  
+\f0 \cf2 to
+\f1 \cf0  
+\f0 \cf4 quicksort_list2d
+\f1 \cf0 \
+	
+\f0 \cf2 return
+\f1 \cf0  
+\f0 \cf2 me
+\f1 \cf0 \
+
+\f0 \cf2 end
+\f1 \cf0  
+\f0 \cf4 use_quicksort
+\f1 \cf0 \
+\
+
+\f0 (*\cf5 !@abstruct\
+<!-- begin locale ja -->\
+\'90\'dd\'92\'e8\'82\'b3\'82\'ea\'82\'c4\'82\'a2\'82\'e9 comparator script \'82\'f0\'8e\'e6\'93\'be\'82\'b5\'82\'dc\'82\'b7\'81\'42\
+<!-- begin locale en -->\
+Obtain current comparator script\
+<!-- end locale -->\
+@result script object\
+\cf0 *)
+\f1 \
+
+\f0 \cf2 on
+\f1 \cf0  
+\f0 \cf4 comparator\cf0 ()
+\f1 \
+	
+\f0 \cf2 return
+\f1 \cf0  
+\f0 \cf2 my
+\f1 \cf0  
+\f0 \cf4 _comparator
+\f1 \cf0 \
+
+\f0 \cf2 end
+\f1 \cf0  
+\f0 \cf4 comparator
+\f1 \cf0 \
+\
+
+\f0 (*\cf5 !@abstruct\
+<!-- begin locale ja -->\
+comparator script \'82\'f0\'90\'dd\'92\'e8\'82\'b5\'82\'dc\'82\'b7\'81\'42\
+<!-- begin locale en -->\
+Set a custom comparator to the instance.\
+<!-- end locale -->\
+@description\
+<!-- begin locale ja -->\
+comparator script \'82\'cd\'88\'c8\'89\'ba\'82\'cc\'8e\'64\'97\'6c\'82\'f0\'96\'9e\'82\'bd\'82\'b5\'82\'c4\'82\'a2\'82\'e9\'95\'4b\'97\'76\'82\'aa\'82\'a0\'82\'e8\'82\'dc\'82\'b7\'81\'42\
+* \'93\'f1\'82\'c2\'82\'cc positional parameter \'82\'f0\'8e\'9d\'82\'c2 do handler \'82\'f0\'8e\'c0\'91\'95\'82\'b5\'82\'c4\'82\'a2\'82\'e9\'81\'42\
+* do handler \'82\'cd\'8e\'9f\'82\'cc\'92\'6c\'82\'f0\'95\'d4\'82\'b7\'81\'42\
+	* 1 : \'91\'e6\'88\'ea\'88\'f8\'90\'94 > \'91\'e6\'93\'f1\'88\'f8\'90\'94\
+	* 0 : \'91\'e6\'88\'ea\'88\'f8\'90\'94 = \'91\'e6\'93\'f1\'88\'f8\'90\'94\
+	* -1 : \'91\'e6\'88\'ea\'88\'f8\'90\'94 < \'91\'e6\'93\'f1\'88\'f8\'90\'94	\
+<!-- begin locale en -->\
+A custom comparator script must have following specification.\
+* do handler which have two positional parameters.\
+* do handler return following values\
+	* 1 : first argument > second argument\
+	* 0 : first argument = second argument\
+	* -1 : first argument = second argument\
+<!-- end locale -->\
+@param a_comparator (script object)\
+@result script object : me\
+\cf0 *)
+\f1 \
+
+\f0 \cf2 on
+\f1 \cf0  
+\f0 \cf4 set_comparator\cf0 (\cf4 a_comparator\cf0 )
+\f1 \
+	
+\f0 \cf2 set
+\f1 \cf0  
+\f0 \cf2 my
+\f1 \cf0  
+\f0 \cf4 _comparator
+\f1 \cf0  
+\f0 \cf2 to
+\f1 \cf0  
+\f0 \cf4 a_comparator
+\f1 \cf0 \
+	
+\f0 \cf2 return
+\f1 \cf0  
+\f0 \cf2 me
+\f1 \cf0 \
+
+\f0 \cf2 end
+\f1 \cf0  
+\f0 \cf4 set_comparator
+\f1 \cf0 \
+\
+
+\f0 \cf2 on
+\f1 \cf0  
+\f0 \cf4 exchange_item\cf0 (\cf4 i\cf0 ,
+\f1  
+\f0 \cf4 j\cf0 ,
+\f1  
+\f0 \cf4 a_xlist2d\cf0 )
+\f1 \
+	
+\f0 --\cf5 log a_list2d
+\f1 \cf0 \
+	
+\f0 \cf2 script
+\f1 \cf0  
+\f0 \cf4 exchanger
+\f1 \cf0 \
+		
+\f0 \cf2 on
+\f1 \cf0  
+\f0 \cf4 do\cf0 (\cf4 a_xlist\cf0 )
+\f1 \
+			
+\f0 \cf4 a_xlist\cf0 's
+\f1  
+\f0 \cf4 exchange_items\cf0 (\cf4 i\cf0 ,
+\f1  
+\f0 \cf4 j\cf0 )
+\f1 \
+			
+\f0 \cf2 return
+\f1 \cf0  
+\f0 \cf3 true
+\f1 \cf0 \
+		
+\f0 \cf2 end
+\f1 \cf0  
+\f0 \cf4 do
+\f1 \cf0 \
+	
+\f0 \cf2 end
+\f1 \cf0  
+\f0 \cf2 script
+\f1 \cf0 \
+	\
+	
+\f0 \cf4 a_xlist2d\cf0 's
+\f1  
+\f0 \cf4 each\cf0 (\cf4 exchanger\cf0 )
+\f1 \
+
+\f0 \cf2 end
+\f1 \cf0  
+\f0 \cf4 exchange_item
+\f1 \cf0 \
+\
+
+\f0 \cf2 on
+\f1 \cf0  
+\f0 \cf4 do\cf0 (\cf4 a_list2d\cf0 )
+\f1 \
+	
+\f0 \cf2 return
+\f1 \cf0  
+\f0 \cf4 sort_list2d\cf0 (\cf4 a_list2d\cf0 )
+\f1 \
+
+\f0 \cf2 end
+\f1 \cf0  
+\f0 \cf4 do
+\f1 \cf0 \
+\
+
+\f0 \cf2 on
+\f1 \cf0  
+\f0 \cf4 quicksort\cf0 (\cf4 beg_index\cf0 ,
+\f1  
+\f0 \cf4 end_index\cf0 ,
+\f1  
+\f0 \cf4 a_xlist2d\cf0 ,
+\f1  
+\f0 \cf4 keylist\cf0 )
+\f1 \
+	
+\f0 \cf2 local
+\f1 \cf0  
+\f0 \cf4 left_index\cf0 ,
+\f1  
+\f0 \cf4 right_index\cf0 ,
+\f1  
+\f0 \cf4 pivot_val
+\f1 \cf0 \
+	\
+	
+\f0 \cf2 copy
+\f1 \cf0  
+\f0 \cf4 beg_index
+\f1 \cf0  
+\f0 \cf2 to
+\f1 \cf0  
+\f0 \cf4 left_index
+\f1 \cf0 \
+	
+\f0 \cf2 copy
+\f1 \cf0  
+\f0 \cf4 end_index
+\f1 \cf0  
+\f0 \cf2 to
+\f1 \cf0  
+\f0 \cf4 right_index
+\f1 \cf0 \
+	
+\f0 --\cf5 copy item ((beg_index + end_index) div 2) of keylist to pivot_val
+\f1 \cf0 \
+	
+\f0 \cf2 set
+\f1 \cf0  
+\f0 \cf4 pivot_val
+\f1 \cf0  
+\f0 \cf2 to
+\f1 \cf0  
+\f0 \cf4 keylist\cf0 's
+\f1  
+\f0 \cf4 item_at\cf0 ((\cf4 beg_index
+\f1 \cf0  
+\f0 +
+\f1  
+\f0 \cf4 end_index\cf0 )
+\f1  
+\f0 \cf2 div
+\f1 \cf0  
+\f0 2)
+\f1 \
+	
+\f0 \cf2 repeat
+\f1 \cf0  
+\f0 \cf2 until
+\f1 \cf0  
+\f0 \cf4 right_index
+\f1 \cf0  
+\f0 \cf2 is
+\f1 \cf0  
+\f0 \cf2 less than
+\f1 \cf0  
+\f0 \cf4 left_index
+\f1 \cf0 \
+		
+\f0 --\cf5 repeat while (left_index is less than or equal to end_index) and (my _comparator's do(item left_index of keylist, pivot_val) is (-1 * (my _sort_direction)))
+\f1 \cf0 \
+		
+\f0 --\cf5 repeat while (left_index < end_index) and (my _comparator's do(item left_index of keylist, pivot_val) is (-1 * (my _sort_direction)))
+\f1 \cf0 \
+		
+\f0 \cf2 repeat
+\f1 \cf0  
+\f0 \cf2 while
+\f1 \cf0  
+\f0 (\cf2 my
+\f1 \cf0  
+\f0 \cf4 _comparator\cf0 's
+\f1  
+\f0 \cf4 do\cf0 (\cf4 keylist\cf0 's
+\f1  
+\f0 \cf4 item_at\cf0 (\cf4 left_index\cf0 ),
+\f1  
+\f0 \cf4 pivot_val\cf0 )
+\f1  
+\f0 \cf2 is
+\f1 \cf0  
+\f0 (-1
+\f1  
+\f0 *
+\f1  
+\f0 (\cf2 my
+\f1 \cf0  
+\f0 \cf4 _sort_direction\cf0 )))
+\f1 \
+			
+\f0 \cf2 set
+\f1 \cf0  
+\f0 \cf4 left_index
+\f1 \cf0  
+\f0 \cf2 to
+\f1 \cf0  
+\f0 \cf4 left_index
+\f1 \cf0  
+\f0 +
+\f1  
+\f0 1
+\f1 \
+		
+\f0 \cf2 end
+\f1 \cf0  
+\f0 \cf2 repeat
+\f1 \cf0 \
+		\
+		
+\f0 --\cf5 repeat while (beg_index is less than or equal to right_index) and (my _comparator's do(item right_index of keylist, pivot_val) is my _sort_direction)
+\f1 \cf0 \
+		
+\f0 --\cf5 repeat while (left_index is less than or equal to right_index) and (my _comparator's do(item right_index of keylist, pivot_val) is my _sort_direction)
+\f1 \cf0 \
+		
+\f0 --\cf5 repeat while (left_index < right_index) and (my _comparator's do(item right_index of keylist, pivot_val) is in \{my _sort_direction, 0\})
+\f1 \cf0 \
+		
+\f0 \cf2 repeat
+\f1 \cf0  
+\f0 \cf2 while
+\f1 \cf0  
+\f0 (\cf2 my
+\f1 \cf0  
+\f0 \cf4 _comparator\cf0 's
+\f1  
+\f0 \cf4 do\cf0 (\cf4 keylist\cf0 's
+\f1  
+\f0 \cf4 item_at\cf0 (\cf4 right_index\cf0 ),
+\f1  
+\f0 \cf4 pivot_val\cf0 )
+\f1  
+\f0 \cf2 is
+\f1 \cf0  
+\f0 \cf2 my
+\f1 \cf0  
+\f0 \cf4 _sort_direction\cf0 )
+\f1 \
+			
+\f0 --\cf5 log item right_index of keylist
+\f1 \cf0 \
+			
+\f0 \cf2 set
+\f1 \cf0  
+\f0 \cf4 right_index
+\f1 \cf0  
+\f0 \cf2 to
+\f1 \cf0  
+\f0 \cf4 right_index
+\f1 \cf0  
+\f0 -
+\f1  
+\f0 1
+\f1 \
+		
+\f0 \cf2 end
+\f1 \cf0  
+\f0 \cf2 repeat
+\f1 \cf0 \
+		\
+		
+\f0 \cf2 if
+\f1 \cf0  
+\f0 \cf4 left_index
+\f1 \cf0  
+\f0 \cf2 is
+\f1 \cf0  
+\f0 \cf2 less than
+\f1 \cf0  
+\f0 \cf4 right_index
+\f1 \cf0  
+\f0 \cf2 then
+\f1 \cf0 \
+			
+\f0 \cf2 if
+\f1 \cf0  
+\f0 \cf4 keylist\cf0 's
+\f1  
+\f0 \cf4 item_at\cf0 (\cf4 right_index\cf0 )
+\f1  
+\f0 \cf2 is
+\f1 \cf0  
+\f0 \cf2 not
+\f1 \cf0  
+\f0 \cf4 keylist\cf0 's
+\f1  
+\f0 \cf4 item_at\cf0 (\cf4 left_index\cf0 )
+\f1  
+\f0 \cf2 then
+\f1 \cf0 \
+				
+\f0 \cf4 exchange_item\cf0 (\cf4 left_index\cf0 ,
+\f1  
+\f0 \cf4 right_index\cf0 ,
+\f1  
+\f0 \cf4 a_xlist2d\cf0 )
+\f1 \
+			
+\f0 \cf2 end
+\f1 \cf0  
+\f0 \cf2 if
+\f1 \cf0 \
+			
+\f0 \cf2 set
+\f1 \cf0  
+\f0 \cf4 left_index
+\f1 \cf0  
+\f0 \cf2 to
+\f1 \cf0  
+\f0 \cf4 left_index
+\f1 \cf0  
+\f0 +
+\f1  
+\f0 1
+\f1 \
+			
+\f0 \cf2 set
+\f1 \cf0  
+\f0 \cf4 right_index
+\f1 \cf0  
+\f0 \cf2 to
+\f1 \cf0  
+\f0 \cf4 right_index
+\f1 \cf0  
+\f0 -
+\f1  
+\f0 1
+\f1 \
+		
+\f0 \cf2 else
+\f1 \cf0  
+\f0 \cf2 if
+\f1 \cf0  
+\f0 \cf4 left_index
+\f1 \cf0  
+\f0 \cf2 is
+\f1 \cf0  
+\f0 \cf4 right_index
+\f1 \cf0  
+\f0 \cf2 then
+\f1 \cf0 \
+			
+\f0 \cf2 set
+\f1 \cf0  
+\f0 \cf4 left_index
+\f1 \cf0  
+\f0 \cf2 to
+\f1 \cf0  
+\f0 \cf4 left_index
+\f1 \cf0  
+\f0 +
+\f1  
+\f0 1
+\f1 \
+			
+\f0 \cf2 set
+\f1 \cf0  
+\f0 \cf4 right_index
+\f1 \cf0  
+\f0 \cf2 to
+\f1 \cf0  
+\f0 \cf4 right_index
+\f1 \cf0  
+\f0 -
+\f1  
+\f0 1
+\f1 \
+		
+\f0 \cf2 end
+\f1 \cf0  
+\f0 \cf2 if
+\f1 \cf0 \
+	
+\f0 \cf2 end
+\f1 \cf0  
+\f0 \cf2 repeat
+\f1 \cf0 \
+	\
+	
+\f0 --\cf5 Do the two "subdivided" lists 
+\f1 \cf0 \
+	
+\f0 \cf2 if
+\f1 \cf0  
+\f0 \cf4 beg_index
+\f1 \cf0  
+\f0 <
+\f1  
+\f0 \cf4 right_index
+\f1 \cf0  
+\f0 \cf2 then
+\f1 \cf0  
+\f0 \cf2 tell
+\f1 \cf0  
+\f0 \cf2 me
+\f1 \cf0  
+\f0 \cf2 to
+\f1 \cf0  
+\f0 \cf4 quicksort\cf0 (\cf4 beg_index\cf0 ,
+\f1  
+\f0 \cf4 right_index\cf0 ,
+\f1  
+\f0 \cf4 a_xlist2d\cf0 ,
+\f1  
+\f0 \cf4 keylist\cf0 )
+\f1 \
+	
+\f0 \cf2 if
+\f1 \cf0  
+\f0 \cf4 end_index
+\f1 \cf0  
+\f0 >
+\f1  
+\f0 \cf4 left_index
+\f1 \cf0  
+\f0 \cf2 then
+\f1 \cf0  
+\f0 \cf2 tell
+\f1 \cf0  
+\f0 \cf2 me
+\f1 \cf0  
+\f0 \cf2 to
+\f1 \cf0  
+\f0 \cf4 quicksort\cf0 (\cf4 left_index\cf0 ,
+\f1  
+\f0 \cf4 end_index\cf0 ,
+\f1  
+\f0 \cf4 a_xlist2d\cf0 ,
+\f1  
+\f0 \cf4 keylist\cf0 )
+\f1 \
+	
+\f0 \cf2 return
+\f1 \cf0  
+\f0 \cf4 a_xlist2d
+\f1 \cf0 \
+
+\f0 \cf2 end
+\f1 \cf0  
+\f0 \cf4 quicksort
+\f1 \cf0 \
+\
+\
+
+\f0 \cf2 property
+\f1 \cf0  
+\f0 \cf4 _comparator
+\f1 \cf0  
+\f0 :
+\f1  
+\f0 \cf4 BaseComparator
+\f1 \cf0 \
+
+\f0 \cf2 property
+\f1 \cf0  
+\f0 \cf4 _sort_direction
+\f1 \cf0  
+\f0 :
+\f1  
+\f0 1
+\f1 \
+
+\f0 \cf2 property
+\f1 \cf0  
+\f0 \cf4 _sort_handler
+\f1 \cf0  
+\f0 :
+\f1  
+\f0 \cf4 quicksort_list2d
+\f1 \cf0 \
+\
+
+\f0 \cf2 on
+\f1 \cf0  
+\f0 \cf4 debug\cf0 ()
+\f1 \
+	
+\f0 \cf2 set
+\f1 \cf0  
+\f0 \cf4 a_list2d
+\f1 \cf0  
+\f0 \cf2 to
+\f1 \cf0  
+\f0 \{\{1,
+\f1  
+\f0 2,
+\f1  
+\f0 1,
+\f1  
+\f0 2\},
+\f1  
+\f0 \{1,
+\f1  
+\f0 1,
+\f1  
+\f0 2,
+\f1  
+\f0 2\}\}
+\f1 \
+	
+\f0 --\cf5 set a_list2d to \{\{"c", "a", "b", "a", "c", "b", "a"\}\}
+\f1 \cf0 \
+	
+\f0 \cf4 use_bubblesort\cf0 ()
+\f1 \
+	
+\f0 \cf4 sort_table\cf0 (\cf4 a_list2d\cf0 ,
+\f1  
+\f0 1)
+\f1 \
+
+\f0 \cf2 end
+\f1 \cf0  
+\f0 \cf4 debug
+\f1 \cf0 \
+\
+
+\f0 \cf2 on
+\f1 \cf0  
+\f0 \cf3 run
+\f1 \cf0 \
+	
+\f0 --\cf5 return debug()
+\f1 \cf0 \
+	
+\f0 \cf2 try
+\f1 \cf0 \
+		
+\f0 \cf3 show helpbook
+\f1 \cf0  
+\f0 (\cf3 path to
+\f1 \cf0  
+\f0 \cf2 me\cf0 )
+\f1  
+\f0 \cf2 with
+\f1 \cf0  
+\f0 \cf3 recovering InfoPlist
+\f1 \cf0 \
+	
+\f0 \cf2 on
+\f1 \cf0  
+\f0 \cf2 error
+\f1 \cf0  
+\f0 \cf4 msg
+\f1 \cf0  
+\f0 \cf3 number
+\f1 \cf0  
+\f0 \cf4 errno
+\f1 \cf0 \
+		
+\f0 \cf3 display alert
+\f1 \cf0  
+\f0 (\cf4 msg
+\f1 \cf0  
+\f0 &
+\f1  
+\f0 \cf3 return
+\f1 \cf0  
+\f0 &
+\f1  
+\f0 \cf4 errno\cf0 )
+\f1 \
+	
+\f0 \cf2 end
+\f1 \cf0  
+\f0 \cf2 try
+\f1 \cf0 \
+
+\f0 \cf2 end
+\f1 \cf0  
+\f0 \cf3 run
+\f1 \cf0 \
+}
