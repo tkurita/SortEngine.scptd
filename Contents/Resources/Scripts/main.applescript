@@ -1,5 +1,5 @@
 property name : "SortEngine"
-property version : "2.1"
+property version : "2.1.1"
 property XList : module
 
 -- compmarator scripts
@@ -25,7 +25,7 @@ XList || help:openbook='XList Help'
 *)
 
 (*!@title SortEngine Reference
-* Version : 2.1
+* Version : 2.1.1
 * Author : Tetsuro KURITA ((<tkurita@mac.com>))
 *)
 

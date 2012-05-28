@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<title>make_with</title>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<link href="../assets/default.css" type="text/css" rel="stylesheet" media="all" />
+		<link href="../assets/handler_page.css" type="text/css" rel="stylesheet" media="all" />
+		<link href="../assets/applescript.css" type="text/css" rel="stylesheet" media="all" />
+		<meta name="keywords" content="make_with, SortEngine" />
+		<script type="text/javascript" src="../assets/run_helpscript.js"></script>
+		<link href="../../" id="HelpBookRoot" />
+	</head>
+
+	<body>
+		<div id="navi-bar">
+			<div class="edit-script-link">
+			<a onclick="return runHelpScript(this)" href="../assets/editScript.scpt">Edit Script</a>
+			</div>
+			<div class="left-contents">
+			<div class="to-root">
+			<a href="../index.html">SortEngine Reference</a>
+			</div>
+			</div>
+		</div>
+		<div id="contents">
+		<div class="elementTitle">
+<a id="make_with" name="make_with">make_with</a>
+</div>
+<p class="sourceCode">
+<span class="userDefine">make_with</span><span class="normal">(</span><span class="userDefine">a_record</span><span class="normal">)</span>
+<a href="../assets/setClipboard.scpt" onclick="return runHelpScriptWithInnerText(this)">
+<img src="../assets/Clipboard24.png" alt="copy to clipboard" align="right" />
+</a></p>
+<p>Make a new instance with passing a record which describes options.</p>
+
+
+
+<p>The record to pass as an argument can have following labels.</p>
+<ul>
+<li>ascending (boolean) : Set sorting order. For descending order, false must be given. If omitted, sort in ascending order.</li>
+<li>sorter (string) : Sorting algorithm. "quick" indicates the quick sort. "bubble" indicates the bubble sort. The quick sort is used in the default.</li>
+<li>comparator (script object): A script object to define magnitude relation of values which can not deal with comparison operators of AppleScript.</li>
+</ul>
+
+<div class="subHeading">
+Parameters
+</div>
+<ul>
+<li>a_record (record):
+Options for a new instance
+</li>
+</ul>
+<div class="subHeading">
+Result
+</div>
+<p>script object :A new instance of SortEngine</p>
+		</div>
+	</body>
+
+</html>
