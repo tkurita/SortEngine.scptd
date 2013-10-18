@@ -2,10 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CFBundleExecutable</key>
-	<string>2.1</string>
 	<key>CFBundleGetInfoString</key>
-	<string>2.1.1 copyright 2003-2012, Tetsuro KURITA</string>
+	<string>2.1.2 copyright 2003-2013, Tetsuro KURITA</string>
 	<key>CFBundleHelpBookFolder</key>
 	<string>SortEngine Help</string>
 	<key>CFBundleHelpBookName</key>
@@ -13,25 +11,25 @@
 	<key>CFBundleIdentifier</key>
 	<string>Scriptfactory.SortEngine</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.1.1</string>
+	<string>2.1.2</string>
 	<key>CFBundleVersion</key>
-	<string>2.1.1</string>
+	<string>2.1.2</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>copyright 2003-2012, Tetsuro KURITA</string>
 	<key>WindowState</key>
 	<dict>
 		<key>dividerCollapsed</key>
-		<true/>
+		<false/>
 		<key>eventLogLevel</key>
-		<integer>-1</integer>
+		<integer>2</integer>
 		<key>name</key>
 		<string>ScriptWindowState</string>
 		<key>positionOfDivider</key>
-		<real>0.0</real>
+		<real>474</real>
 		<key>savedFrame</key>
-		<string>44 235 883 622 0 0 1440 878 </string>
+		<string>155 128 710 723 0 0 1440 878 </string>
 		<key>selectedTabView</key>
-		<string>description</string>
+		<string>event log</string>
 	</dict>
 </dict>
 </plist>

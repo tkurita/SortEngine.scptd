@@ -1,6 +1,6 @@
 property name : "SortEngine"
-property version : "2.1.1"
-property XList : module
+property version : "2.1.2"
+property XList : module version 1.6
 
 -- compmarator scripts
 script BaseComparator
@@ -186,11 +186,12 @@ on sort_table(a_list2d, key_index)
 	set a_xlist2d to XList's make_with(a_list2d)
 	script XListConverter
 		on do(a_ref)
-			return XList's make_with(contents of a_ref)
+			return XList's make_with(a_ref)
 		end do
 	end script
 	set a_xlist2d to a_xlist2d's map(XListConverter)
 	my _sort_handler(a_xlist2d, key_index)
+	
 	return a_list2d
 end sort_table
 
@@ -307,7 +308,7 @@ on use_bubblesort()
 	return me
 end use_bubblesort
 
-on quicksort_list2d(a_xlist2d, key_index) -- must be placed before use_quicksort
+on quicksort_list2d(a_xlist2d, key_index) -- must be placed before "use_quicksort" handler definition
 	set keylist to a_xlist2d's item_at(key_index)
 	return quicksort(1, keylist's count_items(), a_xlist2d, keylist)
 end quicksort_list2d
@@ -368,14 +369,12 @@ on set_comparator(a_comparator)
 end set_comparator
 
 on exchange_item(i, j, a_xlist2d)
-	--log a_list2d
 	script exchanger
 		on do(a_xlist)
 			a_xlist's exchange_items(i, j)
 			return true
 		end do
 	end script
-	
 	a_xlist2d's each(exchanger)
 end exchange_item
 
@@ -432,7 +431,7 @@ on debug()
 	boot (module loader) for me
 	set a_list2d to {{1, 2, 1, 2}, {1, 1, 2, 2}}
 	--set a_list2d to {{"c", "a", "b", "a", "c", "b", "a"}}
-	use_bubblesort()
+	--use_bubblesort()
 	sort_table(a_list2d, 1)
 end debug
 
