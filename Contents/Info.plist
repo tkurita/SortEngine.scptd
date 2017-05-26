@@ -2,26 +2,24 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CFBundleGetInfoString</key>
-	<string>2.1.2 copyright 2003-2013, Tetsuro KURITA</string>
 	<key>CFBundleHelpBookFolder</key>
-	<string>SortEngine Help</string>
+	<string>SortEngineHelp</string>
 	<key>CFBundleHelpBookName</key>
-	<string>SortEngine Help</string>
+	<string>net.script-factory.SortEngine.help</string>
 	<key>CFBundleIdentifier</key>
-	<string>Scriptfactory.SortEngine</string>
+	<string>net.script-factory.SortEngine</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.1.2</string>
+	<string>2.2</string>
 	<key>CFBundleVersion</key>
-	<string>2.1.2</string>
+	<string>2.2</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>copyright 2003-2012, Tetsuro KURITA</string>
+	<string>Copyright 2003-2017, Tetsuro KURITA</string>
 	<key>WindowState</key>
 	<dict>
 		<key>bundleDividerCollapsed</key>
-		<true/>
+		<false/>
 		<key>bundlePositionOfDivider</key>
-		<real>0.0</real>
+		<real>411</real>
 		<key>dividerCollapsed</key>
 		<false/>
 		<key>eventLogLevel</key>
