@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<title>SortEngine Reference</title>
+		
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<link href="assets/default.css" type="text/css" rel="stylesheet" media="all" />
+        <link href="assets/applescript.css" type="text/css" rel="stylesheet" media="all" />
+		<meta name="keywords" content="SortEngine, AppleScript" />
+		<script type="text/javascript" src="assets-helpbook/run_helpscript.js"></script>
+		<script type="text/javascript" src="assets/navibar-jump.js"></script>
+        <link id="helpviewer-handler-helper" href="assets-helpbook/helpviewer-handler-helper.scpt" />
+        <script type="text/javascript" src="assets-helpbook/helpviewer-handler-enable.js"></script>
+        <link href="../" id="HelpBookRoot" />
+	</head>
+
+	<body>
+		<div id="navi-bar">
+			<div class="edit-script-link">
+				<a onclick="return runHelpScriptWithBundleRoot(this)" href="assets-helpbook/editScript.scpt">Edit Script</a>
+			</div>
+			<div class="left-contents">
+			<div class="to-root">
+				<!-- InstanceBeginEditable name="to-root" --><a href="../index.html">SortEngine Help</a><!-- InstanceEndEditable -->
+			</div>
+			<select onchange="navibarJump(this)">
+<option value="">
+§
+</option>
+<option value="#Constructor_Methods">
+Constructor Methods
+</option>
+<option value="#make">
+- make
+</option>
+<option value="#make_with">
+- make_with
+</option>
+<option value="#Class_method">
+Class method
+</option>
+<option value="#base_comparator">
+- base_comparator
+</option>
+<option value="#Do_Sort">
+Do Sort
+</option>
+<option value="#sort_list">
+- sort_list
+</option>
+<option value="#sort_xlist">
+- sort_xlist
+</option>
+<option value="#sort_table">
+- sort_table
+</option>
+<option value="#sort_xtable">
+- sort_xtable
+</option>
+<option value="#Accessor_Methods">
+Accessor Methods
+</option>
+<option value="#is_ascending">
+- is_ascending
+</option>
+<option value="#set_ascending">
+- set_ascending
+</option>
+<option value="#use_bubblesort">
+- use_bubblesort
+</option>
+<option value="#use_quicksort">
+- use_quicksort
+</option>
+<option value="#comparator">
+- comparator
+</option>
+<option value="#set_comparator">
+- set_comparator
+</option>
+</select>
+			</div>
+		</div>
+		<!-- InstanceBeginEditable name="prev-next-item" --><div class="prev-next-item"><a href="../02_usage/index.html"><span class="navibar-prev">Usage</span></a></div><!-- InstanceEndEditable -->
+		<div id="contents">
+		<h1>SortEngine Reference</h1>
+<ul>
+<li>Version : 2.2</li>
+<li>Author : Tetsuro KURITA <a href="mailto:scriptfactory@mac.com">scriptfactory@mac.com</a></li>
+<li>Requirements : OS X 10.9 or later</li>
+<li><a href="http://www.script-factory.net/XModules/SortEngine/en/index.html">Home page</a> || <a href="http://www.script-factory.net/XModules/SortEngine/changelog.html">ChangeLog</a> || <a href="https://github.com/tkurita/SortEngine.scptd">Repository</a> </li>
+</ul>
+<p>Sort routines of the quick sort and the bubble sort algorithm.</p>
+
+<h2 id="Constructor_Methods">Constructor Methods</h2>
+<h3 id="make"><a href="pages/make.html">make</a></h3>
+<p>Make a new instance of default settings.</p>
+
+<h3 id="make_with"><a href="pages/make_with.html">make_with</a></h3>
+<p>Make a new instance with passing a record which describes options.</p>
+
+<h2 id="Class_method">Class method</h2>
+<h3 id="base_comparator"><a href="pages/base_comparator.html">base_comparator</a></h3>
+<p>Obtain default comparator script in embedded in SortEngine.</p>
+
+<h2 id="Do_Sort">Do Sort</h2>
+<h3 id="sort_list"><a href="pages/sort_list.html">sort_list</a></h3>
+<p>Sort a list.</p>
+
+<h3 id="sort_xlist"><a href="pages/sort_xlist.html">sort_xlist</a></h3>
+<p>Sort a XList.</p>
+
+<h3 id="sort_table"><a href="pages/sort_table.html">sort_table</a></h3>
+<p>Sort each list in two dimensional list according to the order of the list of the specified index.</p>
+
+<h3 id="sort_xtable"><a href="pages/sort_xtable.html">sort_xtable</a></h3>
+<p>Sort each <a href="help:openbook='net.script-factory.XList.help'">XList</a> in two dimensional XList according to the order of the sub XList of the specified index.</p>
+
+<h2 id="Accessor_Methods">Accessor Methods</h2>
+<h3 id="is_ascending"><a href="pages/is_ascending.html">is_ascending</a></h3>
+<p>Return true when sorting order of the instance is ascending.</p>
+
+<h3 id="set_ascending"><a href="pages/set_ascending.html">set_ascending</a></h3>
+<p>Set sorting order.</p>
+
+<h3 id="use_bubblesort"><a href="pages/use_bubblesort.html">use_bubblesort</a></h3>
+<p>Set sorting algorithm to quick sort. This is the default.</p>
+
+<h3 id="use_quicksort"><a href="pages/use_quicksort.html">use_quicksort</a></h3>
+<p>Set sorting algorithm to bubble sort.</p>
+
+<h3 id="comparator"><a href="pages/comparator.html">comparator</a></h3>
+<p>Obtain current comparator script</p>
+
+<h3 id="set_comparator"><a href="pages/set_comparator.html">set_comparator</a></h3>
+<p>Set a custom comparator to the instance.</p>
+
+		</div>
+		<!-- InstanceBeginEditable name="prev-next-item" --><div class="prev-next-item"><a href="../02_usage/index.html"><span class="navibar-prev">Usage</span></a></div><!-- InstanceEndEditable -->
+	</body>
+
+</html>

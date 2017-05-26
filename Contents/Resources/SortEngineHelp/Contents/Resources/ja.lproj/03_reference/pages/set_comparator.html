@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<title>set_comparator</title>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<link href="../assets/default.css" type="text/css" rel="stylesheet" media="all" />
+		<link href="../assets/handler_page.css" type="text/css" rel="stylesheet" media="all" />
+		<link href="../assets/applescript.css" type="text/css" rel="stylesheet" media="all" />
+		<meta name="keywords" content="set_comparator, SortEngine" />
+		<script type="text/javascript" src="../assets-helpbook/run_helpscript.js"></script>
+        <link id="helpviewer-handler-helper" href="../assets-helpbook/helpviewer-handler-helper.scpt" />
+        <script type="text/javascript" src="../assets-helpbook/helpviewer-handler-enable.js"></script>
+		<link href="../../" id="HelpBookRoot" />
+	</head>
+
+	<body>
+		<div id="navi-bar">
+			<div class="edit-script-link">
+			<a onclick="return runHelpScriptWithBundleRoot(this)" href="../assets-helpbook/editScript.scpt">Edit Script</a>
+			</div>
+			<div class="left-contents">
+			<div class="to-root">
+			<a href="../index.html">SortEngine Reference</a>
+			</div>
+			</div>
+		</div>
+		<div id="contents">
+		<div class="elementTitle">
+<a id="set_comparator" name="set_comparator">set_comparator</a>
+</div>
+<p class="sourceCode">
+<span class="userDefine">set_comparator</span><span class="normal">(</span><span class="userDefine">a_comparator</span><span class="normal">)</span>
+<a href="../assets-helpbook/setClipboard.scpt" onclick="return runHelpScriptWithInnerText(this)">
+<img src="../assets-helpbook/Clipboard24.png" alt="copy to clipboard" align="right" />
+</a></p>
+<p>comparator script を設定します。</p>
+
+
+
+<p>comparator script は以下の仕様を満たしている必要があります。</p>
+<ul>
+<li>二つの positional parameter を持つ do handler を実装している。</li>
+<li>do handler は次の値を返す。
+<ul>
+<li>1 : 第一引数 &gt; 第二引数</li>
+<li>0 : 第一引数 = 第二引数</li>
+<li>-1 : 第一引数 &lt; 第二引数	</li>
+</ul>
+</li>
+</ul>
+
+<div class="subHeading">
+Parameters
+</div>
+<ul>
+<li>a_comparator (script object)</li>
+</ul>
+<div class="subHeading">
+Result
+</div>
+<p>script object : me</p>
+		</div>
+	</body>
+
+</html>
